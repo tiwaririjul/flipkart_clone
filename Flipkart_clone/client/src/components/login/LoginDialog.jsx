@@ -136,14 +136,12 @@ const LoginDialog = ({ open, setOpen }) => {
 
   const loginUser = async () => {
     let response = await authenticateLogin(login);
-
     console.log(response);
-
     if (!response) showError(true);
     else {
       showError(false);
       handleClose();
-      setAccount(login.firstname);
+      setAccount(login.username);
     }
   };
 
