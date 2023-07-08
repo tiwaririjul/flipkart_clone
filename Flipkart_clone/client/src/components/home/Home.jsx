@@ -27,7 +27,7 @@ function Home() {
         <Banner />
         {/* <MidSlide products={products} title="Deal of the day" timer={true} /> */}
         <MidSection />
-        <Slide products={products} title="Discount for you" timer={false} />
+        <Slide products={products} title="Discount for you" timer={true} />
         <Slide products={products} title="Suggestion Items" timer={false} />
         <Slide products={products} title="Top Selection" timer={false} />
         <Slide products={products} title="Deal of the day" timer={false} />

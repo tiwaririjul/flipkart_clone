@@ -24,16 +24,16 @@ const Wrapper = styled(Box)(({ theme }) => ({
   display: "flex",
   "& > *": {
     marginRight: "40px !important",
-    textDecoration: "none",
-    color: "#FFFFFF",
+    // textDecoration: "none",
+    // color: "#FFFFFF",
     fontSize: 12,
     alignItems: "center",
     [theme.breakpoints.down("sm")]: {
-      color: "#2874f0",
-      alignItems: "center",
-      display: "flex",
-      flexDirection: "column",
-      marginTop: 10,
+      // color: "#2874f0",
+      // alignItems: "center",
+      display: "block",
+      // flexDirection: "column",
+      // marginTop: 10,
     },
   },
   [theme.breakpoints.down("sm")]: {

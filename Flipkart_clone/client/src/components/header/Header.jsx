@@ -59,11 +59,39 @@ const Header = () => {
   const subURL =
     "https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/plus_aef861.png";
 
+  const [open, setOpen] = useState(false);
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const list = () => (
+    <Box style={{ width: 250 }} onClick={handleClose}>
+      <List>
+        <listItem button>
+          <CustomButtons />
+        </listItem>
+      </List>
+    </Box>
+  );
+
   return (
-    <StyledHeader>
+    <StyledHeader position="fixed">
       <Toolbar style={{ minHeight: 55 }}>
-        <Component to={'/'}>
-          <img src={logoURL} alt="logo" style={{ width: 75 }} />
+        <MenuButton color="inherit" onClick={handleOpen}>
+          <Menu />
+        </MenuButton>
+
+        <Drawer open={open} onClose={handleClose}>
+          {list()}
+        </Drawer>
+
+        <Component to="/">
+          <img src={logoURL} style={{ width: 75 }} />
           <Box component="span" style={{ display: "flex" }}>
             <SubHeading>
               Explore&nbsp;
@@ -71,7 +99,7 @@ const Header = () => {
                 Plus
               </Box>
             </SubHeading>
-            <PlusImage src={subURL} alt="sub-logo" />
+            <PlusImage src={subURL} />
           </Box>
         </Component>
         <Search />
