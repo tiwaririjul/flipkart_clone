@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 import {
   AppBar,
   Toolbar,
@@ -12,8 +12,6 @@ import {
 } from "@mui/material";
 import { Menu } from "@mui/icons-material";
 
-import { Link } from "react-router-dom";
-
 //components
 import CustomButtons from "./CustomButtons";
 import Search from "./Search";
@@ -23,7 +21,7 @@ const StyledHeader = styled(AppBar)`
   height: 55px;
 `;
 
-const Component = styled(Box)`
+const Component = styled(Link)`
   margin-left: 12%;
   line-height: 0;
   color: #ffffff;
@@ -64,7 +62,7 @@ const Header = () => {
   return (
     <StyledHeader>
       <Toolbar style={{ minHeight: 55 }}>
-        <Component>
+        <Component to={'/'}>
           <img src={logoURL} alt="logo" style={{ width: 75 }} />
           <Box component="span" style={{ display: "flex" }}>
             <SubHeading>
