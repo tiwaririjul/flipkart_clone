@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 // import { payUsingPaytm } from "../../service/api";
 // import { post } from "../../utils/paytm";
 
-// import { addToCart } from "../../redux/actions/cartActions";
+import { addToCart } from "../../redux/actions/cartActions";
 import { useDispatch } from "react-redux";
 
 const LeftContainer = styled(Box)(({ theme }) => ({
@@ -37,6 +37,14 @@ const StyledButton = styled(Button)(({ theme }) => ({
 }));
 
 const Actionitems = ({ product }) => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [qunatity, setQuantity] = useState(1);
+  const { id } = product;
+  const addItemtoCart = () => {
+    dispatch(addToCart(id, qunatity))
+    navigate('/cart')
+  }
   return (
     <LeftContainer>
       <Box
@@ -51,6 +59,7 @@ const Actionitems = ({ product }) => {
       <StyledButton
         variant="contained"
         style={{ marginRight: 10, backgroundColor: "#ff9f00" }}
+        onClick={() => addItemtoCart()}
       >
         <Cart />
         Add to cart

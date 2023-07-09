@@ -41,7 +41,7 @@ const ProductDetail = ({ product }) => {
   const date = new Date(new Date().getTime() + 5 * 24 * 60 * 60 * 1000);
   return (
     <>
-      <Typography>{product.title.longTile}</Typography>
+      <Typography>{product.title.longTitle}</Typography>
       <Typography style={{ marginTop: 5, color: "#878787", fontSize: 14 }}>
         8 Ratings & 1 Reviews
         <Box component="span">
@@ -50,7 +50,7 @@ const ProductDetail = ({ product }) => {
       </Typography>
       <Typography style={{ marginTop: 5, color: "#878787", fontSize: 14 }}>
         <Box component="span" style={{ fontSize: 28 }}>
-          Rs{product.price.cost}
+          Rs {product.price.cost}
         </Box>
         &nbsp;&nbsp;&nbsp;
         {/* <Box component="span" style={{ fontSize: 28 }}>

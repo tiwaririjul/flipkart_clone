@@ -41,14 +41,14 @@ const PlusImage = styled("img")({
 
 const MenuButton = styled(IconButton)(({ theme }) => ({
   display: "none",
-  [theme.breakpoints.down("sm")]: {
+  [theme.breakpoints.down("md")]: {
     display: "block",
   },
 }));
 
 const CustomButtonWrapper = styled("span")(({ theme }) => ({
   margin: "0 5% 0 auto",
-  [theme.breakpoints.down("sm")]: {
+  [theme.breakpoints.down("md")]: {
     display: "none",
   },
 }));

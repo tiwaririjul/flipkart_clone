@@ -42,6 +42,7 @@ const Search = () => {
   const getText = (text) => {
     setText(text);
     setOpen(false);
+  
   };
 
   const getProducts = useSelector((state) => state.getProducts);
@@ -52,11 +53,16 @@ const Search = () => {
   useEffect(() => {
     dispatch(listProducts());
   }, [dispatch]);
+  // const handleSearch=(val)=>{
+  //   setOpen(true);
+  //   setText(val);
+  // }
   return (
     <SearchContainer>
       <InputSearchBase
         placeholder="Search for products, brands and more"
         inputProps={{ "aria-label": "search" }}
+        value={text}
         onChange={(e) => getText(e.target.value)}
       />
       <SearchIconWrapper>
@@ -73,9 +79,10 @@ const Search = () => {
                 <Link
                   to={`/product/${product.id}`}
                   style={{ textDecoration: "none", color: "inherit" }}
-                  onClick={() => setOpen(true)}
+                  onClick={() =>setOpen(true)}
                 >
                   {product.title.longTitle}
+
                 </Link>
               </ListItem>
             ))}
