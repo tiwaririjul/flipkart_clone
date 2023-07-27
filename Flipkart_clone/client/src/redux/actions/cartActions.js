@@ -9,7 +9,13 @@ export const addToCart = (id, quantity) => async (dispatch) => {
         console.log('Error while calling cart API');
     }
 };
-
+export const IncrementCart=(id,qunatity)=>async(dispatch)=>{
+try {
+    dispatch({type:actionTypes.INCREMENT,payload:{id,qunatity}})
+} catch (error) {
+    console.log("Error While Updating the Quantity...");
+}
+}
 export const removeFromCart = (id) => (dispatch) => {
     dispatch({
         type: actionTypes.REMOVE_FROM_CART,

@@ -28,17 +28,16 @@ export const payusingPaytm = async (product) => {
     const {data:{key}}= await axios.get(`${url}/api/getkey`);
     const { data:{order} } = await axios.post(`${url}/checkout`, product);
     var options = {
-      key, // Enter the Key ID generated from the Dashboard
-      amount: order.amount*100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+      key, 
+      amount: order.amount*100,
       currency: "INR",
       name: "Acme Corp",
       description: "Test Transaction",
       image: "https://example.com/your_logo",
-      order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+      order_id: order.id, 
       callback_url: "http://localhost:8000/paymentverification",
       prefill: {
         name: "Gaurav Kumar",
-        
         email: "gaurav.kumar@example.com",
         contact: "9000090000"
       },

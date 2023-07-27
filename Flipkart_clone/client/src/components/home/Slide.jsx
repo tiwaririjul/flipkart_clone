@@ -68,7 +68,7 @@ const RenderTimer = styled(Box)(({ theme }) => ({
 }));
 
 const Slide = ({ products, title, timer }) => {
-  console.log(products);
+  //console.log(products);
   const timerURL =
     "https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/timer_a73398.svg";
 

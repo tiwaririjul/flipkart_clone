@@ -38,7 +38,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
 }));
 
 const Actionitems = ({ product }) => {
-  console.log(product);
+  //console.log(product);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [qunatity, setQuantity] = useState(1);

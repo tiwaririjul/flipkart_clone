@@ -42,12 +42,11 @@ const Remove = styled(Button)`
 
 const CartItem = ({ item, removeItemFromCart }) => {
     const fassured = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/fa_62673a.png';
-    console.log(item);
     return (
         <Component>
             <LeftComponent>
                 <img src={item.url} style={{ height: 110, width: 110 }} />
-                { <GroupButton /> }
+                { <GroupButton id={item.id}/> }
             </LeftComponent>
             <Box style={{ margin: 20 }}>
                  <Typography>{addEllipsis(item.title.longTitle)}</Typography>
