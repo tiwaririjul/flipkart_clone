@@ -74,7 +74,6 @@ class PaytmChecksum {
   }
 
   static getStringByParams(params) {
-    console.log("params ", params);
     var data = {};
     Object.keys(params)
       .sort()

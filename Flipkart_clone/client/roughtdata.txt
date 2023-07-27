@@ -1,0 +1,14 @@
+samsung=http://www.wrock.org/wp-content/uploads/2015/12/10729smartphone-samsung-galaxy-core-2-duos-dual-chip-3gandroid-4.4-cam.-5mp-tela-4-5-34-proc.-quad-core-086774600.jpg
+oneplus=https://tse3.mm.bing.net/th?id=OIP.xYZtKwCtA-bRBxC3946VVwHaJq&pid=Api&P=0&w=300&h=300
+motorola=https://tse2.mm.bing.net/th?id=OIP.lMt5tyyRFMhjWvgdYg0IrQHaFu&pid=Api&P=0&w=300&h=300
+realme=https://tse2.mm.bing.net/th?id=OIP.k8pQTVWX6dBRO0Ru0n7KaAHaHa&pid=Api&P=0&w=300&h=300
+iphone=https://tse2.mm.bing.net/th?id=OIP.RzRHAUUfUTGFPDqmeD_4mQHaHa&pid=Api&P=0&w=300&h=300
+xiomi=https://tse3.mm.bing.net/th?id=OIP.kAy1d0B64K1NXy9Stw4nEAHaHa&pid=Api&P=0&w=300&h=300
+nothing=https://tse1.mm.bing.net/th?id=OIP.ysLl6iUC8hKOWUDjpPg_2gHaGx&pid=Api&P=0&w=300&h=300
+oppo=https://tse4.mm.bing.net/th?id=OIP.5YLyPzAKz9VA537lbv-orAHaHa&pid=Api&P=0&w=300&h=300
+vivo=https://tse2.mm.bing.net/th?id=OIP.OVSbKk8JxieOmzGmqCtrogHaHZ&pid=Api&P=0&w=300&h=300
+poco=https://tse1.mm.bing.net/th?id=OIP.TZ1D6bEJXyUNtBW1BguStgHaHa&pid=Api&P=0&w=300&h=300
+iqoo=https://specphone.com/web/wp-content/uploads/2020/01/gsmarena_001-5-1300x975.jpg
+google=https://static.digit.in/product/f80075a06ee8d4ce1d31d7e727366e10b781ebd2.jpeg?tr=w-1200
+infinix=https://www.deepspecs.com/wp-content/uploads/2020/01/1-infinix-smart-4c-deepspecs-com.jpg
+redmi=https://tse1.mm.bing.net/th?id=OIP.2cF3cEBMPvIfK-wqVQnPdAHaHa&pid=Api&P=0&w=300&h=300

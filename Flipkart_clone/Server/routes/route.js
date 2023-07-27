@@ -3,8 +3,12 @@ import { userSignup, userLogin } from "../controller/user-controller.js";
 import {
   getProducts,
   getProductById,
+  getData,
 } from "../controller/product-controller.js";
-import { addPaymentGateway } from "../controller/payment-controller.js";
+import {
+  Checkout,
+  Paymentverification,
+} from "../controller/payment-controller.js";
 const router = express.Router();
 
 router.post("/signup", userSignup);
@@ -13,6 +17,12 @@ router.post("/login", userLogin);
 router.get("/products", getProducts);
 router.get("/product/:id", getProductById);
 
-router.post("/payment", addPaymentGateway);
+// router.post("/payment", addPaymentGateway);
 
+router.post("/checkout", Checkout);
+router.post("/paymentverification", Paymentverification);
+router.post("/getdata", getData);
+router.get("/api/getkey", (req, res) => {
+  res.status(200).json({ key: process.env.RAZOPAY_API_KEY });
+});
 export default router;

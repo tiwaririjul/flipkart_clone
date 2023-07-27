@@ -59,6 +59,7 @@ const CartItem = ({ item, removeItemFromCart }) => {
                     <MRP component="span"><strike>₹{item.price.mrp}</strike></MRP>&nbsp;&nbsp;&nbsp;
                     <Discount component="span">{item.price.discount} off</Discount>
                 </Typography>
+                
                 <Remove onClick={() => removeItemFromCart(item.id)}>Remove</Remove>
             </Box>
         </Component>
