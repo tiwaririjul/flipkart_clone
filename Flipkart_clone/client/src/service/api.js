@@ -38,6 +38,7 @@ export const payusingPaytm = async (product) => {
       callback_url: "http://localhost:8000/paymentverification",
       prefill: {
         name: "Gaurav Kumar",
+        
         email: "gaurav.kumar@example.com",
         contact: "9000090000"
       },
