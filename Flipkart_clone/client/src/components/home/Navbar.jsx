@@ -1,7 +1,7 @@
 
 
 import { Typography, Box, styled } from '@mui/material'; 
-
+import { Link } from 'react-router-dom';
 import { navData } from '../../constant/data';
 
 const Component = styled(Box)(({ theme }) => ({
@@ -30,10 +30,12 @@ const NavBar = () => {
         <Component>
             {
                 navData.map(temp => (
-                    <Container>
+                    <Link to='category' style={{textDecoration:'none'}}>
+                    <Container style={{cursor:"pointer"}}>
                         <img src={temp.url} style={{  width: 64 }} />
                         <Text>{temp.text}</Text>
                     </Container>
+                    </Link>
                 ))
             }
         </Component>
