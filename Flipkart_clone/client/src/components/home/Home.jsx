@@ -19,6 +19,7 @@ function Home() {
 
   useEffect(() => {
     dispatch(getProducts());
+    //console.log(products);
   }, [dispatch]);
   return (
     <>

@@ -40,8 +40,85 @@ const ProductDetail = ({ product }) => {
     "https://rukminim1.flixcart.com/lockin/774/185/images/CCO__PP_2019-07-14.png?q=50";
   const date = new Date(new Date().getTime() + 5 * 24 * 60 * 60 * 1000);
   return (
-    <>
-      <Typography>{product.title.longTitle}</Typography>
+    Object.keys(product).length > 15 ? <>
+      <Typography>{product.model}</Typography>
+      <Typography style={{ marginTop: 5, color: "#878787", fontSize: 14 }}>
+        {product.rating} Ratings & 1 Reviews
+        <Box component="span">
+          <img src={fassured} style={{ width: 77, marginLeft: 20 }} alt="" />
+        </Box>
+      </Typography>
+      <Typography style={{ marginTop: 5, color: "#878787", fontSize: 14 }}>
+        <Box component="span" style={{ fontSize: 28 }}>
+          Rs {product.price}
+        </Box>
+        &nbsp;&nbsp;&nbsp;
+        {/* <Box component="span" style={{ fontSize: 28 }}>
+        Rs{product.price.cost}
+      </Box>
+      &nbsp;&nbsp;&nbsp;
+      <Box component="span" style={{ fontSize: 28 }}>
+        Rs{product.price.mrp}
+      </Box> */}
+      </Typography>
+      <Typography>Available Offers</Typography>
+      <SmallText>
+        <Typography>
+          <StyledBadge />
+          Bank Offer 5% Unlimited Cashback on Flipkart Axis Bank Credit Card
+        </Typography>
+        <Typography>
+          <StyledBadge />
+          Bank Offer 10% Off on Bank of Baroda Mastercard debit card first time
+          transaction, Terms and Condition apply
+        </Typography>
+        <Typography>
+          <StyledBadge />
+          Purchase this Furniture or Appliance and Get Extra ₹500 Off on Select
+          ACs
+        </Typography>
+        <Typography>
+          <StyledBadge />
+          Partner OfferExtra 10% off upto ₹500 on next furniture purchase
+        </Typography>
+      </SmallText>
+      <Table>
+        <TableBody>
+          <ColumnText>
+            <TableCell style={{ color: "#878787" }}>Delivery</TableCell>
+            <TableCell style={{ fontWeight: 600 }}>
+              Delivery by {date.toDateString()} | ₹40
+            </TableCell>
+          </ColumnText>
+          <ColumnText>
+            <TableCell style={{ color: "#878787" }}>Warranty</TableCell>
+            <TableCell>No Warranty</TableCell>
+          </ColumnText>
+          <ColumnText>
+            <TableCell style={{ color: "#878787" }}>Seller</TableCell>
+            <TableCell>
+              <span style={{ color: "#2874f0" }}>SuperComNet</span>
+              <Typography>GST invoice available</Typography>
+              <Typography>View more sellers starting from ₹329</Typography>
+            </TableCell>
+          </ColumnText>
+          <TableRow>
+            <TableCell colSpan={2}>
+              <img src={adURL} style={{ width: 390 }} />
+            </TableCell>
+          </TableRow>
+          <ColumnText>
+            <Typography >Description</Typography>
+            <Typography >Processor : {product.processor_brand}</Typography>
+            <Typography >Number of Cors :{product.num_cores} Core</Typography>
+            <Typography >Battery : {product.battery_capacity} Mah</Typography>
+            <Typography >Camera : Front {product.num_front_cameras} MP  & Back : {product.num_rear_cameras} MP</Typography>
+            <Typography >Extendable Upto : {product.extended_upto} GB</Typography>
+          </ColumnText>
+        </TableBody>
+      </Table>
+    </> : <>
+      <Typography>{product.title.longTitle }</Typography>
       <Typography style={{ marginTop: 5, color: "#878787", fontSize: 14 }}>
         8 Ratings & 1 Reviews
         <Box component="span">
@@ -54,12 +131,12 @@ const ProductDetail = ({ product }) => {
         </Box>
         &nbsp;&nbsp;&nbsp;
         {/* <Box component="span" style={{ fontSize: 28 }}>
-          Rs{product.price.cost}
-        </Box>
-        &nbsp;&nbsp;&nbsp;
-        <Box component="span" style={{ fontSize: 28 }}>
-          Rs{product.price.mrp}
-        </Box> */}
+        Rs{product.price.cost}
+      </Box>
+      &nbsp;&nbsp;&nbsp;
+      <Box component="span" style={{ fontSize: 28 }}>
+        Rs{product.price.mrp}
+      </Box> */}
       </Typography>
       <Typography>Available Offers</Typography>
       <SmallText>
@@ -118,3 +195,5 @@ const ProductDetail = ({ product }) => {
 };
 
 export default ProductDetail;
+
+

@@ -43,10 +43,27 @@ const Remove = styled(Button)`
 const CartItem = ({ item, removeItemFromCart }) => {
     const fassured = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/fa_62673a.png';
     return (
-        <Component>
+        Object.keys(item).length > 15 ? <Component>
+        <LeftComponent>
+            <img src={item.image_url} style={{ height: 110, width: 110 }} />
+            { <GroupButton item={item} removeItemFromCart={removeItemFromCart}/> }
+        </LeftComponent>
+        <Box style={{ margin: 20 }}>
+             <Typography>{addEllipsis(item.model)}</Typography>
+            <SmallText>Seller:RetailNet
+                <span><img src={fassured} style={{ width: 50, marginLeft: 10 }} /></span>
+            </SmallText>
+            <Typography style={{ margin: '20px 0' }}>
+                <Cost component="span">₹{item.price}</Cost>&nbsp;&nbsp;&nbsp;
+                <MRP component="span"><strike>₹{item.price *2}</strike></MRP>&nbsp;&nbsp;&nbsp;
+                <Discount component="span">50 % off</Discount>
+            </Typography>
+            <Remove onClick={() => removeItemFromCart(item.product_id)}>Remove</Remove>
+        </Box>
+    </Component> : <Component>
             <LeftComponent>
                 <img src={item.url} style={{ height: 110, width: 110 }} />
-                { <GroupButton id={item.id}/> }
+                { <GroupButton item={item} removeItemFromCart={removeItemFromCart}/> }
             </LeftComponent>
             <Box style={{ margin: 20 }}>
                  <Typography>{addEllipsis(item.title.longTitle)}</Typography>
@@ -58,7 +75,6 @@ const CartItem = ({ item, removeItemFromCart }) => {
                     <MRP component="span"><strike>₹{item.price.mrp}</strike></MRP>&nbsp;&nbsp;&nbsp;
                     <Discount component="span">{item.price.discount} off</Discount>
                 </Typography>
-                
                 <Remove onClick={() => removeItemFromCart(item.id)}>Remove</Remove>
             </Box>
         </Component>

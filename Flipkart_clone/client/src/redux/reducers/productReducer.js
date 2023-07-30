@@ -30,3 +30,31 @@ export const getProductDetailsReducer = (state = { product: {}}, action) => {
             return state
     }
 }
+
+export const getMobileProductsReducer = (state = {Mobiproducts: []}, action) => {
+    switch(action.type) {
+        case actionTypes.GET_MOBILE_DATA_SUCCES:
+            return { Mobiproducts: action.payload }
+        case actionTypes.GET_MOBILE_DATA_FAILURE:
+            return { error: action.payload }
+        default:
+            return state
+    }
+};
+
+export const getMobileProductDetailsReducer = (state = { mobileproduct: {}}, action) => {
+    switch(action.type){
+        case actionTypes.GET_MOBILE_PRODUCT_DETAILS_SUCCESS:
+            return { mobileproduct: action.payload }
+        case actionTypes.GET_MOBILE_PRODUCT_DETAILS_FAIL:
+            return {
+                error: action.payload
+            }
+        case actionTypes.GET_MOBILE_PRODUCT_DETAILS_RESET: 
+            return {
+                mobileproduct: {}
+            }
+        default:
+            return state
+    }
+}

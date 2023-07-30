@@ -23,8 +23,9 @@ export const authenticateSignup = async (user) => {
   }
 };
 
-export const payusingPaytm = async (product) => {
+export const payusingPaytm = async (product,account) => {
   try {
+    console.log(account);
     const {data:{key}}= await axios.get(`${url}/api/getkey`);
     const { data:{order} } = await axios.post(`${url}/checkout`, product);
     var options = {

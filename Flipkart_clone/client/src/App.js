@@ -6,6 +6,8 @@ import DataProvider from "./context/DataProvider";
 import DetailView from "./components/details/DetailView";
 import Cart from "./components/Cart/Cart";
 import Category from "./components/category/Category";
+import Product from "./components/category/Product";
+import MobileView from "./components/details/MobileView";
 function App() {
   return (
     <DataProvider>
@@ -17,6 +19,7 @@ function App() {
             <Route path='/product/:id' element={<DetailView/>}/>
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/category' element={<Category/>}/>
+            <Route path='/category/mobileproduct/:id' element={<MobileView/>}/>
           </Routes>
         </Box>
       </BrowserRouter>

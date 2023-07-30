@@ -1,5 +1,5 @@
-import { useState } from "react";
-import axios from "axios";
+import { useContext } from "react";
+import { DataContext } from "../../context/DataProvider";
 import { Button, Box, styled } from "@mui/material";
 import { ShoppingCart as Cart, FlashOn as Flash } from "@mui/icons-material";
 
@@ -38,19 +38,24 @@ const StyledButton = styled(Button)(({ theme }) => ({
 }));
 
 const Actionitems = ({ product }) => {
-  //console.log(product);
+  let id;
+  if (Object.keys(product).length > 15) {
+    id = product.product_id;
+  } else {
+    id = product.id;
+  }
+  const addItemtoCart = () => {
+    dispatch(addToCart(id, 1));
+    navigate("/cart");
+  };
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [qunatity, setQuantity] = useState(1);
-  const { id } = product;
-  const addItemtoCart = () => {
-    dispatch(addToCart(id, qunatity))
-    navigate('/cart')
-  }
-  const buyNow=async()=>{
-   const res= await payusingPaytm(product);
-   console.log(res);
-  }
+  const { account, setAccount } = useContext(DataContext);
+
+  const buyNow = async () => {
+    const res = await payusingPaytm(product,account);
+    console.log(res);
+  };
   return (
     <LeftContainer>
       <Box
@@ -60,7 +65,7 @@ const Actionitems = ({ product }) => {
           width: "90%",
         }}
       >
-        <Image src={product.detailUrl} alt="product" />
+        <Image src={product.detailUrl || product.image_url} alt="product" />
       </Box>
       <StyledButton
         variant="contained"
@@ -70,8 +75,10 @@ const Actionitems = ({ product }) => {
         <Cart />
         Add to cart
       </StyledButton>
-      <StyledButton variant="contained" style={{ backgroundColor: "#fb541b" }}
-       onClick={() => buyNow()}
+      <StyledButton
+        variant="contained"
+        style={{ backgroundColor: "#fb541b" }}
+        onClick={() => buyNow()}
       >
         <Flash />
         Buy Now

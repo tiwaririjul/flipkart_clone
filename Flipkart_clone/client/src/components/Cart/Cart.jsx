@@ -50,12 +50,11 @@ const StyledButton = styled(Button)`
 
 const Cart = () => {
     const { cartItems } = useSelector(state => state.cart)
-
     const dispatch=useDispatch();
     const removeItemFromCart = (id) => {
         dispatch(removeFromCart(id));
     }
-    console.log(cartItems);
+    
     return (
         <>
            { cartItems.length ? 
